@@ -6,9 +6,9 @@ We'll be monitoring Apache Logs with the following architecture  ->
 Apache Server -> Syslog Connector -> Logstash (via CEF codec Plugin) -> Elasticsearch -> Kibana
 
 1). In this case we are sending events to Logstash TCP Port 5100, refer to attach Logstash.conf file. 
-  Start Elastisearch
-  Start Kibana
-  Start Logstash using the Logstash.conf file => bin/logstash -f logstash.conf
+Start Elastisearch
+Start Kibana
+Start Logstash using the Logstash.conf file => bin/logstash -f logstash.conf
 
 2). Things to be done on Apache Server side:
 
