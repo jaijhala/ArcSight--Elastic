@@ -40,6 +40,6 @@ Syslog Pipe: Specify the absolute path to the pipe.
 
 When setting up the destination enter the hostname and port where Logstash is installed and listening on that port. Make sure that you already have Logstash up and running on that port otherwise the connector will give 'Destination unreachable error' since that TCP port is not listening currently. 
 
-Start the connector => bin/arcsight agents
+Start the connector => <Your connector INSTALL Folder>/current/bin/arcsight agents
 
 Check the attached Dashboard as a sample output on Kibana. 
