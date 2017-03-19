@@ -20,16 +20,22 @@ Edit the file /etc/httpd/conf/httpd.conf and add the entries:
   
   
 This will send all access and error logs to syslog on the localhost. If you are forwarding events to a remote log host, the /etc/rsyslog.conf file should be modified with the appropriate hostname/IP with Port number. 
+
 For instance: #*.* @@remote-host:Port number
 Double @@ for TCP and single for UDP
 
 Restart syslog and httpd after making those changes. 
 
 3). Install Syslog Daemon, File or Pipe connector.
-    Syslog Daemon : It will listen on the specified port for syslog events. 
-    Syslog File: Enter the full path name for the file from which this connector will read events.
-    Syslog Pipe: Specify the absolute path to the pipe. 
+
+Syslog Daemon : It will listen on the specified port for syslog events. 
+
+Syslog File: Enter the full path name for the file from which this connector will read events.
+    
+Syslog Pipe: Specify the absolute path to the pipe. 
+
 When setting up the destination enter the hostname and port where Logstash is installed and listening on that port. Make sure that you already have Logstash up and running on that port otherwise the connector will give 'Destination unreachable error' since that TCP port is not listening currently. 
+
 Start the connector => bin/arcsight agents
 
 Check the attached Dashboard as a sample output on Kibana. 
