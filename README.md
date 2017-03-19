@@ -7,7 +7,7 @@ Apache Server -> Syslog Connector -> Logstash (via CEF codec Plugin) -> Elastics
 
 1). In this case we are sending events to Logstash TCP Port 5100, refer to attach Logstash.conf file. 
 
-Start Elastisearch
+Start Elasticsearch
 
 Start Kibana
 
