@@ -6,8 +6,11 @@ We'll be monitoring Apache Logs with the following architecture  ->
 Apache Server -> Syslog Connector -> Logstash (via CEF codec Plugin) -> Elasticsearch -> Kibana
 
 1). In this case we are sending events to Logstash TCP Port 5100, refer to attach Logstash.conf file. 
+
 Start Elastisearch
+
 Start Kibana
+
 Start Logstash using the Logstash.conf file => bin/logstash -f logstash.conf
 
 2). Things to be done on Apache Server side:
@@ -22,6 +25,7 @@ Edit the file /etc/httpd/conf/httpd.conf and add the entries:
 This will send all access and error logs to syslog on the localhost. If you are forwarding events to a remote log host, the /etc/rsyslog.conf file should be modified with the appropriate hostname/IP with Port number. 
 
 For instance: #*.* @@remote-host:Port number
+
 Double @@ for TCP and single for UDP
 
 Restart syslog and httpd after making those changes. 
