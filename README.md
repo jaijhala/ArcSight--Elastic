@@ -13,8 +13,11 @@ Start Logstash using the Logstash.conf file => bin/logstash -f logstash.conf
 2). Things to be done on Apache Server side:
 
 Edit the file /etc/httpd/conf/httpd.conf and add the entries:
+  
   ErrorLog "| /usr/bin/logger -t 'apache_error_log' " 
+  
   CustomLog "| /usr/bin/logger -t 'apache_access_log' " combined
+  
   
 This will send all access and error logs to syslog on the localhost. If you are forwarding events to a remote log host, the /etc/rsyslog.conf file should be modified with the appropriate hostname/IP with Port number. 
 For instance: #*.* @@remote-host:Port number
